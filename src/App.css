@@ -1,0 +1,58 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+#root {
+  max-width: 1920px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+}
+
+.modal {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  overflow: hidden;
+  visibility: visible;
+
+  z-index: var(--modal-z);
+
+  animation: fade-in 0.2s;
+}
+
+.modal-contents {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-backdrop {
+  position: fixed;
+
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: var(--overlay-z);
+
+  background-color: #0000003b;
+  animation: fade-in 0.2s;
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}

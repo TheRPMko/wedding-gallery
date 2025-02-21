@@ -1,0 +1,1 @@
+Wedding gallery made with React + TypeScript + TailwindCSS & daisyUI!
