@@ -14,10 +14,10 @@
   flex-direction: row;
   align-items: flex-start;
   justify-content: center;
-  overflow: hidden;
+  /*overflow: hidden;*/
   visibility: visible;
 
-  z-index: var(--modal-z);
+  z-index: 1000;
 
   animation: fade-in 0.2s;
 }
@@ -28,6 +28,7 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  pointer-events: all;
 }
 
 .modal-backdrop {
@@ -36,7 +37,7 @@
   top: 0;
   height: 100%;
   width: 100%;
-  z-index: var(--overlay-z);
+  z-index: 100;
 
   background-color: #0000003b;
   animation: fade-in 0.2s;

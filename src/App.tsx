@@ -1,4 +1,5 @@
-import { useState } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useEffect, useState } from "react";
 import "./App.css";
 
 import ImageGallery from "./components/ImageGallery";
@@ -9,9 +10,20 @@ import photoList from "./assets/photoList.json";
 function App() {
   const photoArray: { thumbnail: string; fullRes: string }[] = [];
 
-  const [photo, setPhoto] = useState<string>("");
   const [index, setIndex] = useState<number>(0);
   const [detail, setDetail] = useState<boolean>(false);
+
+  // Trigger URL parameter photo display
+  useEffect(() => {
+    const params = new URLSearchParams(document.location.search);
+
+    if (params) {
+      const query: number | null = Number(params.get("i"));
+      if (query) {
+        openPhoto(query);
+      }
+    }
+  }, []);
 
   // Parse photo list into src
   for (const photo in photoList) {
@@ -21,21 +33,28 @@ function App() {
     });
   }
 
+  // Handle opening photo detail
+  const openPhoto = (index: number) => {
+    setDetail(true);
+    if (index > -1 && index < photoArray.length) {
+      setIndex(index);
+      history.pushState({}, "", `?i=${index}`);
+    }
+  };
+
   return (
     <>
       <ImageGallery
         photos={photoArray}
-        onImageClick={(photo, index) => {
-          setDetail(true);
-          setPhoto(photo);
-          setIndex(index);
+        onImageClick={(_photo, index) => {
+          openPhoto(index);
         }}
       />
       <Modal
         detail={detail}
         switchDetail={setDetail}
-        photo={photo}
-        changeIndex={setIndex}
+        photo={photoArray[index]?.fullRes}
+        changeIndex={openPhoto}
         index={index}
       />
     </>

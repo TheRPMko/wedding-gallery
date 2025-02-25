@@ -14,7 +14,7 @@ const Modal: React.FC<ModalProps> = ({
   switchDetail,
   photo,
   changeIndex,
-  index
+  index,
 }) => {
   return (
     <div>
@@ -32,7 +32,16 @@ const Modal: React.FC<ModalProps> = ({
           <div className="modal">
             <div className="modal-contents">
               <img src={photo} />
-              <button className="btn btn-primary" onClick={() => changeIndex(index+1)}>
+              <button
+                className="btn btn-primary"
+                onClick={() => changeIndex(index - 1)}
+              >
+                Prev
+              </button>
+              <button
+                className="btn btn-primary"
+                onClick={() => changeIndex(index + 1)}
+              >
                 Next
               </button>
             </div>
