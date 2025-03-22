@@ -32,18 +32,20 @@ const Modal: React.FC<ModalProps> = ({
           <div className="modal">
             <div className="modal-contents">
               <img src={photo} />
-              <button
-                className="btn btn-primary"
-                onClick={() => changeIndex(index - 1)}
-              >
-                Prev
-              </button>
-              <button
-                className="btn btn-primary"
-                onClick={() => changeIndex(index + 1)}
-              >
-                Next
-              </button>
+              <div className="flex flex-row flex-wrap">
+                <button
+                  className="btn btn-ghost mr-40 mt-2 mb-2 rounded-none hover:outline-1"
+                  onClick={() => changeIndex(index - 1)}
+                >
+                  &lt;
+                </button>
+                <button
+                  className="btn btn-ghost ml-40 mt-2 mb-2 rounded-none hover:outline-1"
+                  onClick={() => changeIndex(index + 1)}
+                >
+                  &gt;
+                </button>
+              </div>
             </div>
           </div>,
           document.getElementById("modal-root")!

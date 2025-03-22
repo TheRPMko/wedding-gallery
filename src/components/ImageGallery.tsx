@@ -58,7 +58,6 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].boundingClientRect.y < 0) {
-          console.log("yo");
           document.body.style.backgroundColor = "#242424"; // Change to dark
         } else {
           document.body.style.backgroundColor = ""; // Reset to default

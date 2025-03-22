@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 
+import Intro from "./components/Intro";
 import ImageGallery from "./components/ImageGallery";
 import Modal from "./components/Modal";
 
@@ -44,6 +45,7 @@ function App() {
 
   return (
     <>
+      <Intro />
       <ImageGallery
         photos={photoArray}
         onImageClick={(_photo, index) => {
