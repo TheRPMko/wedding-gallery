@@ -34,13 +34,13 @@ const Modal: React.FC<ModalProps> = ({
               <img src={photo} />
               <div className="flex flex-row flex-wrap">
                 <button
-                  className="btn btn-ghost mr-40 mt-2 mb-2 rounded-none hover:outline-1"
+                  className="btn btn-ghost mr-[10vw] mt-2 mb-2 rounded-none hover:outline-1"
                   onClick={() => changeIndex(index - 1)}
                 >
                   &lt;
                 </button>
                 <button
-                  className="btn btn-ghost ml-40 mt-2 mb-2 rounded-none hover:outline-1"
+                  className="btn btn-ghost ml-[10vw] mt-2 mb-2 rounded-none hover:outline-1"
                   onClick={() => changeIndex(index + 1)}
                 >
                   &gt;

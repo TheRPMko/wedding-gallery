@@ -7,7 +7,7 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-  overflow-x:hidden;
+  overflow-x: hidden;
 }
 
 .welcome-container {
@@ -40,6 +40,11 @@
   pointer-events: all;
 
   background-color: #242424;
+}
+
+.modal-contents > img {
+  max-height: 80vh;
+  max-width: 80vw;
 }
 
 .modal-backdrop {

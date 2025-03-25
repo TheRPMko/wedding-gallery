@@ -5,6 +5,7 @@ import "./App.css";
 import Intro from "./components/Intro";
 import ImageGallery from "./components/ImageGallery";
 import Modal from "./components/Modal";
+import ScrollButton from "./components/ScrollButton";
 
 import photoList from "./assets/photoList.json";
 
@@ -59,6 +60,7 @@ function App() {
         changeIndex={openPhoto}
         index={index}
       />
+      <ScrollButton />
     </>
   );
 }
